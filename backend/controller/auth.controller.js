@@ -220,5 +220,11 @@ export const checkAuth = async (req, res) => {
       success: true,
       user,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log("Error in check auth : " , error)
+    return res.status(400).json({
+      success : false,
+      message : error.message
+    })
+  }
 };
